@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Nunito&family=PT+Serif:ital@1&family=Raleway:wght@300&family=Roboto&family=Roboto+Slab:wght@100&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="src/styles.css" />
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <title>My weather application</title>
+  </head>
+  <body>
+    <div class="weather-application">
+      <header>
+        <form id="city-form">
+          <input
+            type="search"
+            placeholder="Enter a city.."
+            required=""
+            class="search-input"
+            id="city-input"
+          />
+
+          <input
+            type="submit"
+            value="Search"
+            class="search-button"
+            id="button-input"
+          />
+        </form>
+      </header>
+      <main>
+        <div class="current-weather">
+          <div>
+            <h1 class="current-city" id="changeNameCountries">Paris</h1>
+
+            <p class="current-details">
+              <span id="current-datetime">"Saturday 15:32, moderate rain"</span>
+              <br />
+              "Humidity:"
+              <strong>87%</strong>
+              ", Wind: "
+              <strong>7.2km/h</strong>
+            </p>
+          </div>
+          <div class="current-temperature">
+            <span class="current-temperature-icon">☀️</span>
+            <span class="current-temperature-value" id="temperature">14</span>
+            <span class="current-temperature-unit">°C</span>
+          </div>
+        </div>
+      </main>
+      <footer>
+        <p>
+          This project was coded by
+          <a href="#" target="_blank">Mirieli S Macedo</a> and is
+          <a href="#" target="_blank"> on GitHub</a> and
+          <a href="#" target="_blank">hosted on Netlify</a>
+        </p>
+      </footer>
+    </div>
+    <script src="src/index.js"></script>
+  </body>
+</html>
