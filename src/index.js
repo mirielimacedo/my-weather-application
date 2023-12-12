@@ -16,13 +16,20 @@ function getWeatherForCity(city) {
     let apiKey = "f9b4d69b4d22303f3t650a59od86ede0";
     let apiUrl = `https://api.shecodes.io/weather/v1/current?query=${city}&key=${apiKey}&units=metric`;
 
-    axios.get(apiUrl).then(displayWeather);
+    axios.get(apiUrl).then(displayWeather).then(displayWeatherIcon);
 }
 
 function displayWeather(response) {
     let temperature = Math.round(response.data.temperature.current);
     let temperatureElement = document.querySelector("#temperature");
     temperatureElement.innerHTML = `${temperature}`;
+    return response;
+}
+
+function displayWeatherIcon(response) {
+    let icon = response.data.condition.icon_url;
+    let iconElement = document.querySelector("#icon-weather");
+    iconElement.innerHTML = `<img src="${icon}"/>`;
 }
 
 function displayCurrentDateTime() {
