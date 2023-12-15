@@ -22,7 +22,8 @@ function getWeatherForCity(city) {
     .then(displayWeather)
     .then(displayDescription)
     .then(displayHumidity)
-    .then(displayWeatherIcon);
+    .then(displayWeatherIcon)
+    .then(displayWindSpeed);
 }
 
 function displayWeather(response) {
