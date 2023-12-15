@@ -24,15 +24,14 @@ let description = response.data.condition.description;
   descriptionElement.innerHTML = `${description}`;
   return response;
 }
-
-  
-
 function displayWeather(response) {
     let temperature = Math.round(response.data.temperature.current);
     let temperatureElement = document.querySelector("#temperature");
     temperatureElement.innerHTML = `${temperature}`;
     return response;
 }
+
+
 
 function displayWeatherIcon(response) {
     let icon = response.data.condition.icon_url;
