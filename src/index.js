@@ -19,12 +19,20 @@ function getWeatherForCity(city) {
     axios.get(apiUrl).then(displayWeather).then(displayWeatherIcon);
 }
 function displayDescription (response){
-//let description = response.data.condition.description;
-console.log(response.data.condition.description);
+let description = response.data.condition.description;
+//console.log(response.data.condition.description);
   let descriptionElement = document.querySelector("#description");
   descriptionElement.innerHTML = `${description}`;
   return response;
 }
+function displayHumidity(response) {
+    let humidity= Math.round(response.data.temperature.humidity);
+    let humidityElement = document.querySelector("#humidity");
+    humidityElement.innerHTML = `${response.data.temperature.humidity}%`;
+    return response;
+}
+
+
 function displayWeather(response) {
     let temperature = Math.round(response.data.temperature.current);
     let temperatureElement = document.querySelector("#temperature");
