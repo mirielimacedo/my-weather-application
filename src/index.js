@@ -8,54 +8,54 @@ function handleFormSubmit(event) {
         let countryName = document.querySelector("#changeNameCountries");
         countryName.innerHTML = cityEnter;
 
-        getWeatherForCity(cityEnter); // Call the API with new city
-         }
+        getWeatherForCity(cityEnter);
+    }
 }
 
 function getWeatherForCity(city) {
     let apiKey = "f9b4d69b4d22303f3t650a59od86ede0";
     let apiUrl = `https://api.shecodes.io/weather/v1/current?query=${city}&key=${apiKey}&units=metric`;
 
-    https://api.shecodes.io/weather/v1/current?query=Lisbon&key=f9b4d69b4d22303f3t650a59od86ede0&units=metric
-
     axios.get(apiUrl)
-    .then(displayWeather)
-    .then(displayDescription)
-    .then(displayHumidity)
-    .then(displayWeatherIcon)
-    .then(displayWindSpeed);
+        .then(displayWeather)
+        .then(displayDescription)
+        .then(displayHumidity)
+        .then(displayWindSpeed)
+        .then(displayWeatherIcon);
 }
 
 function displayWeather(response) {
     let temperature = Math.round(response.data.temperature.current);
     let temperatureElement = document.querySelector("#temperature");
-    temperatureElement.innerHTML = `${temperature}`;
+    temperatureElement.innerHTML = `${temperature}°C`;
     return response;
 }
-function displayDescription (response){
-let description = response.data.condition.description;
-//console.log(response.data.condition.description);
-  let descriptionElement = document.querySelector("#description");
-  descriptionElement.innerHTML = `${description}`;
-  return response;
+
+function displayDescription(response) {
+    let description = response.data.condition.description;
+    let descriptionElement = document.querySelector("#description");
+    descriptionElement.innerHTML = description;
+    return response;
 }
+
 function displayHumidity(response) {
-    let humidity= Math.round(response.data.temperature.humidity);
+    let humidity = Math.round(response.data.temperature.humidity);
     let humidityElement = document.querySelector("#humidity");
-    humidityElement.innerHTML = `${response.data.temperature.humidity}%`;
+    humidityElement.innerHTML = `${humidity}%`;
     return response;
 }
+
 function displayWindSpeed(response) {
-    let windSpeed= Math.round(response.data.wind.speed);
+    let windSpeed = Math.round(response.data.wind.speed);
     let windSpeedElement = document.querySelector("#wind-speed");
-    windSpeedElement.innerHTML = `${response.data.wind,speed}km/h`;
+    windSpeedElement.innerHTML = `${windSpeed} km/h`;
     return response;
 }
 
 function displayWeatherIcon(response) {
     let icon = response.data.condition.icon_url;
     let iconElement = document.querySelector("#icon-weather");
-    iconElement.innerHTML = `<img src="${icon}"/>`;
+    iconElement.src = icon;
 }
 
 function displayCurrentDateTime() {
@@ -63,7 +63,7 @@ function displayCurrentDateTime() {
     let options = { weekday: 'long', hour: '2-digit', minute: '2-digit', hour12: false };
     let dateTimeString = now.toLocaleString('en-AU', options);
     let dateTimeDisplay = document.querySelector("#current-datetime");
-    dateTimeDisplay.textContent = `"${dateTimeString}, moderate rain"`;
+    dateTimeDisplay.textContent = dateTimeString;
 }
 
 let cityForm = document.querySelector("#city-form");
