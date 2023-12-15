@@ -19,7 +19,8 @@ function getWeatherForCity(city) {
     axios.get(apiUrl).then(displayWeather).then(displayWeatherIcon);
 }
 function displayDescription (response){
-let description = response.data.condition.description;
+//let description = response.data.condition.description;
+console.log(response.data.condition.description);
   let descriptionElement = document.querySelector("#description");
   descriptionElement.innerHTML = `${description}`;
   return response;
@@ -30,8 +31,6 @@ function displayWeather(response) {
     temperatureElement.innerHTML = `${temperature}`;
     return response;
 }
-
-
 
 function displayWeatherIcon(response) {
     let icon = response.data.condition.icon_url;
