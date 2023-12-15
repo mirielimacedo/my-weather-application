@@ -58,13 +58,13 @@ function displayWeatherIcon(response) {
     iconElement.src = icon;
 }
 
-function displayCurrentDateTime() {
+/*function displayCurrentDateTime() {
     let now = new Date();
     let options = { weekday: 'long', hour: '2-digit', minute: '2-digit', hour12: false };
     let dateTimeString = now.toLocaleString('en-AU', options);
     let dateTimeDisplay = document.querySelector("#current-datetime");
     dateTimeDisplay.textContent = dateTimeString;
-}
+}*/
 
 let cityForm = document.querySelector("#city-form");
 cityForm.addEventListener("submit", handleFormSubmit);
