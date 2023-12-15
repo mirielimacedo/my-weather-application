@@ -16,6 +16,8 @@ function getWeatherForCity(city) {
     let apiKey = "f9b4d69b4d22303f3t650a59od86ede0";
     let apiUrl = `https://api.shecodes.io/weather/v1/current?query=${city}&key=${apiKey}&units=metric`;
 
+    https://api.shecodes.io/weather/v1/current?query=Lisbon&key=f9b4d69b4d22303f3t650a59od86ede0&units=metric
+
     axios.get(apiUrl)
     .then(displayWeather)
     .then(displayDescription)
@@ -40,6 +42,12 @@ function displayHumidity(response) {
     let humidity= Math.round(response.data.temperature.humidity);
     let humidityElement = document.querySelector("#humidity");
     humidityElement.innerHTML = `${response.data.temperature.humidity}%`;
+    return response;
+}
+function displayWindSpeed(response) {
+    let windSpeed= Math.round(response.data.wind.speed);
+    let windSpeedElement = document.querySelector("#wind-speed");
+    windSpeedElement.innerHTML = `${response.data.wind,speed}km/h`;
     return response;
 }
 
