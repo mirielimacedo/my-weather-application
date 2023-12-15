@@ -30,26 +30,9 @@ function displayWeather(response) {
     temperatureElement.innerHTML = `${temperature}`;
     return response;
 }
+
+
 function displayDescription(response) {
-    console.log(response); // Isso ajudará você a ver a estrutura do objeto de resposta
-    let description;
-    try {
-        description = response.data.condition.description; // Supondo que este é o caminho correto
-    } catch (error) {
-        console.error('Error accessing description:', error);
-        // Se o caminho estiver incorreto, você pode ajustar aqui baseado na saída do console.log
-    }
-    
-    if (description) {
-        let descriptionElement = document.querySelector("#description");
-        descriptionElement.innerHTML = description;
-    }
-    return response;
-}
-
-
-
-/*function displayDescription(response) {
 console.log(response.data.condition.description);
   //  let description = response.data.condition.description;
     let descriptionElement = document.querySelector("#description");
@@ -57,7 +40,7 @@ console.log(response.data.condition.description);
     return response;
 }
 
-function displayHumidity(response) {
+/*function displayHumidity(response) {
     let humidity = Math.round(response.data.temperature.humidity);
     let humidityElement = document.querySelector("#humidity");
     humidityElement.innerHTML = `${humidity}%`;
