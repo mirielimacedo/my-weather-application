@@ -18,9 +18,9 @@ function getWeatherForCity(city) {
 
     axios.get(apiUrl)
         .then(displayWeather)
-        .then(displayDescription)
-        .then(displayHumidity)
-        .then(displayWindSpeed)
+       // .then(displayDescription)
+        //.then(displayHumidity)
+        //.then(displayWindSpeed)
         .then(displayWeatherIcon);
 }
 
@@ -31,7 +31,7 @@ function displayWeather(response) {
     return response;
 }
 
-function displayDescription(response) {
+/*function displayDescription(response) {
     let description = response.data.condition.description;
     let descriptionElement = document.querySelector("#description");
     descriptionElement.innerHTML = description;
@@ -50,7 +50,7 @@ function displayWindSpeed(response) {
     let windSpeedElement = document.querySelector("#wind-speed");
     windSpeedElement.innerHTML = `${windSpeed} km/h`;
     return response;
-}
+}*/
 
 function displayWeatherIcon(response) {
     let icon = response.data.condition.icon_url;
@@ -58,13 +58,13 @@ function displayWeatherIcon(response) {
     iconElement.src = icon;
 }
 
-/*function displayCurrentDateTime() {
+function displayCurrentDateTime() {
     let now = new Date();
     let options = { weekday: 'long', hour: '2-digit', minute: '2-digit', hour12: false };
     let dateTimeString = now.toLocaleString('en-AU', options);
     let dateTimeDisplay = document.querySelector("#current-datetime");
     dateTimeDisplay.textContent = dateTimeString;
-}*/
+}
 
 let cityForm = document.querySelector("#city-form");
 cityForm.addEventListener("submit", handleFormSubmit);
