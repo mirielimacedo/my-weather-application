@@ -20,6 +20,8 @@ function getWeatherForCity(city) {
 }
 
 function displayWeather(response) {
+  let descriptionElement = document.querySelector("@description");
+  descriptionElement.innerHTML = (response.data.condition.description);
     let temperature = Math.round(response.data.temperature.current);
     let temperatureElement = document.querySelector("#temperature");
     temperatureElement.innerHTML = `${temperature}`;
