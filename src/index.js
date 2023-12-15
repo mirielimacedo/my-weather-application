@@ -28,7 +28,7 @@ let description = response.data.condition.description;
 function displayHumidity(response) {
     let humidity= Math.round(response.data.temperature.humidity);
     let humidityElement = document.querySelector("#humidity");
-    humidityElement.innerHTML = `${response.data.temperature.humidity}%`;
+    humidityElement.innerHTML = "33%";
     return response;
 }
 
