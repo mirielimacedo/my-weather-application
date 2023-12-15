@@ -32,7 +32,8 @@ function displayWeather(response) {
 }
 
 function displayDescription(response) {
-    let description = response.data.condition.description;
+console.log(response.data.condition.description);
+  //  let description = response.data.condition.description;
     let descriptionElement = document.querySelector("#description");
     descriptionElement.innerHTML = description;
     return response;
