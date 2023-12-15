@@ -18,7 +18,7 @@ function getWeatherForCity(city) {
 
     axios.get(apiUrl)
         .then(displayWeather)
-       // .then(displayDescription)
+        .then(displayDescription)
         //.then(displayHumidity)
         //.then(displayWindSpeed)
         .then(displayWeatherIcon);
@@ -31,13 +31,13 @@ function displayWeather(response) {
     return response;
 }
 
-/*function displayDescription(response) {
+function displayDescription(response) {
     let description = response.data.condition.description;
     let descriptionElement = document.querySelector("#description");
     descriptionElement.innerHTML = description;
     return response;
 }
-
+/*
 function displayHumidity(response) {
     let humidity = Math.round(response.data.temperature.humidity);
     let humidityElement = document.querySelector("#humidity");
