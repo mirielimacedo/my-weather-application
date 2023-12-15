@@ -16,7 +16,11 @@ function getWeatherForCity(city) {
     let apiKey = "f9b4d69b4d22303f3t650a59od86ede0";
     let apiUrl = `https://api.shecodes.io/weather/v1/current?query=${city}&key=${apiKey}&units=metric`;
 
-    axios.get(apiUrl).then(displayWeather).then(displayWeatherIcon);
+    axios.get(apiUrl)
+    .then(displayWeather)
+    .then(displayDescription)
+    .then(displayHumidity)
+    .then(displayWeatherIcon);
 }
 function displayDescription (response){
 let description = response.data.condition.description;
@@ -28,7 +32,7 @@ let description = response.data.condition.description;
 function displayHumidity(response) {
     let humidity= Math.round(response.data.temperature.humidity);
     let humidityElement = document.querySelector("#humidity");
-    humidityElement.innerHTML = "33%";
+    humidityElement.innerHTML = `${response.data.temperature.humidity}%`;
     return response;
 }
 
