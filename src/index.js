@@ -35,13 +35,7 @@ function formatDate(date) {
 
 let searchForm = document.querySelector("#search-form");
 searchForm.addEventListener("submit", search);
- if (cityElement) {
-        cityElement = cityEnter.charAt(0).toUpperCase() + cityEnter.slice(1).toLowerCase();
-        let countryName = document.querySelector("#changeNameCountries");
-        countryName.innerHTML = cityEnter;
 
-        getWeatherForCity(cityElement);
-    }
 
 let currentDateELement = document.querySelector("#current-date");
 let currentDate = new Date();
