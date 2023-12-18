@@ -3,6 +3,14 @@ function search(event) {
   let searchInputElement = document.querySelector("#search-input");
   let cityElement = document.querySelector("#current-city");
   cityElement.innerHTML = searchInputElement.value;
+  (cityEnter) {
+        cityEnter = cityEnter.charAt(0).toUpperCase() + cityEnter.slice(1).toLowerCase();
+        let countryName = document.querySelector("#changeNameCountries");
+        countryName.innerHTML = cityEnter;
+
+        getWeatherForCity(cityEnter);
+    }
+
 }
 
 function formatDate(date) {
