@@ -1,11 +1,12 @@
 function refreshWeather(response) {
     let temperatureElement = document.querySelector("#temperature");
-    // Arredonda o valor da temperatura para o número inteiro mais próximo
     let temperatureRounded = Math.round(response.data.temperature.current);
-    temperatureElement.innerHTML = `${temperatureRounded}°C`; // Inclui o símbolo de graus Celsius
+    let descriptionElement = document.querySelector("#description");
+
+   temperatureElement.innerHTML = `${temperatureRounded}°C`; 
+   descriptionElement.innerHTML = response.data.condition.description;
+
 }
-
-
 
 function searchCity(city){
 let apiKey = "f9b4d69b4d22303f3t650a59od86ede0";
@@ -21,10 +22,10 @@ function formatCityName(cityName) {
 function handSearchSubmit(event) {
     event.preventDefault();
     let searchInput = document.querySelector("#search-form-input");
-    let formattedCityName = formatCityName(searchInput.value);  // Formata o nome da cidade
-    let cityElement = document.querySelector("#city");
-    cityElement.innerHTML = formattedCityName;  // Atualiza com o nome da cidade formatado
-    searchCity(formattedCityName);  // Chama searchCity com o nome da cidade formatado
+    let formattedCityName = formatCityName(searchInput.value);  
+      let cityElement = document.querySelector("#city");
+    cityElement.innerHTML = formattedCityName;  
+    searchCity(formattedCityName);  
 }
 
 let searchFormElement = document.querySelector("#search-form");
@@ -32,16 +33,7 @@ searchFormElement.addEventListener("submit", handSearchSubmit);
 
 
 
-/*function handSearchSubmit(event) {
-    event.preventDefault();
-    let searchInput = document.querySelector("#search-form-input");
-    let cityElement = document.querySelector("#city");
-    cityElement.innerHTML = searchInput.value;
-    searchCity(searchInput.value); 
-}
 
-let searchFormElement = document.querySelector("#search-form");
-searchFormElement.addEventListener("submit",handSearchSubmit);*/
 
 
 
