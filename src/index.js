@@ -11,9 +11,16 @@ axios.get(apiUrl).then(refreshWeather);
 }
 
 
-
-
 function handSearchSubmit(event){
+    event.preventDefault();
+    let searchInput = document.querySelector("#search-form-input");
+    let cityElement = document.querySelector("#city");
+    cityElement.innerHTML = searchInput.value;
+    searchcity(searchInput.value); // Esta é a chamada correta para a função searchcity
+}
+
+
+/*function handSearchSubmit(event){
   event.preventDefault();
   let searchInput = document.querySelector("#search-form-input");
   let cityElement = document.querySelector("#city");
@@ -23,7 +30,7 @@ function handSearchSubmit(event){
 
 
 let searchFormElement = document.querySelector("#search-form");
-searchFormElement.addEventListener("submit",handSearchSubmit);
+searchFormElement.addEventListener("submit",handSearchSubmit);*/
 
 
 
