@@ -3,11 +3,13 @@ function refreshWeather(response) {
     let temperatureRounded = Math.round(response.data.temperature.current);
     let descriptionElement = document.querySelector("#description");
     let humidityElement = document.querySelector("#humidity");
+    let windSpeedElement = document.querySelector("#wind-speed");
 
    
    temperatureElement.innerHTML = `${temperatureRounded}°C`; 
    descriptionElement.innerHTML = response.data.condition.description;
    humidityElement.innerHTML = `${response.data.temperature.humidity}%`;
+   windSpeedElement.innerHTML = `${response.data.wind.speed}km/h`;
 
 }
 
