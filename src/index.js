@@ -1,9 +1,10 @@
-function refreshWeather(response){
-let temperatureElement = document.querySelector("#temperature");
-temperatureElement.innerHTML = response.data.temperature.current;
-
-
+function refreshWeather(response) {
+    let temperatureElement = document.querySelector("#temperature");
+    // Arredonda o valor da temperatura para o número inteiro mais próximo
+    let temperatureRounded = Math.round(response.data.temperature.current);
+    temperatureElement.innerHTML = `${temperatureRounded}°C`; // Inclui o símbolo de graus Celsius
 }
+
 
 
 function searchCity(city){
