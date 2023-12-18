@@ -1,6 +1,13 @@
+function refreshWeather(response){
+let temperatureElement = document.querySelector("#temperature");
+temperatureElement.innerHTML = response.data.current.temperature;
+}
+
+
 function searchcity(city){
 let apiKey = "f9b4d69b4d22303f3t650a59od86ede0";
-let urlApi = `https://api.shecodes.io/weather/v1/current?query=${city}&key=${apiKey}&units=metric`; 
+let apiUrl = `https://api.shecodes.io/weather/v1/current?query=${city}&key=${apiKey}&units=metric`; 
+axios.get(apiUrl).the(refreshWeather);
 }
 
 
