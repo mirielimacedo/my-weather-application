@@ -15,7 +15,7 @@ axios.get(apiUrl).then(refreshWeather);
 
 function handSearchSubmit(event) {
     event.preventDefault();
-    let searchInput = document.querySelector("#search-form-input");
+    let searchInput = document.querySelector("#search-form");
     let cityElement = document.querySelector("#city");
     cityElement.innerHTML = searchInput.value;
     searchCity(searchInput.value); // Esta é a chamada correta para a função searchcity
