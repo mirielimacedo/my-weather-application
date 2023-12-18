@@ -1,5 +1,7 @@
 function refreshWaether(response){
-  console.log(response.data);
+  let temperatureElement = document.querySelector("#temperature");
+  temperatureElement.innerHTML = response.data.temperature.current;
+ 
 }
 
 function getWeatherForCity(city) {
@@ -33,8 +35,8 @@ function handleFormSubmit(event) {
 
 /*function displayWeather(response) {
     let temperature = Math.round(response.data.temperature.current);
-    let temperatureElement = document.querySelector("#temperature");
-    temperatureElement.innerHTML = `${temperature}`;
+    
+    
     return response;
 }
 
