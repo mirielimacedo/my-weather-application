@@ -4,7 +4,7 @@ function refreshWaether(response){
  
 }
 
-function getWeatherForCity(city) {
+function searchCity(city) {
     let apiKey = "f9b4d69b4d22303f3t650a59od86ede0";
     let apiUrl = `https://api.shecodes.io/weather/v1/current?query=${city}&key=${apiKey}&units=metric`;
    axios.get(apiUrl).then(refreshWaether);
@@ -17,20 +17,22 @@ function getWeatherForCity(city) {
         .then(displayWeatherIcon);*/
 }
 
-function handleFormSubmit(event) {
+function handleSearchSubmit(event) {
     event.preventDefault();
-    let cityInput = document.querySelector("#city-input");
-    let cityEnter = cityInput.value;
-
-    if (cityEnter) {
+    let searchInput = document.querySelector("#search-form-input");
+    let cityElement = document.querySelector("#city-form");
+    cityElement.innerHTML = searchInput.value;
+    searchCity(searchInput.value)
+   }
+   let seachFormElement = document.querySelector("#search-from");
+   seachFormElement.addEventListener("submit",handleSearchSubmit);
+ /*if (cityEnter) {
         cityEnter = cityEnter.charAt(0).toUpperCase() + cityEnter.slice(1).toLowerCase();
         let countryName = document.querySelector("#changeNameCountries");
         countryName.innerHTML = cityEnter;
 
         getWeatherForCity(cityEnter);
-    }
-}
-
+    }*/
 
 
 /*function displayWeather(response) {
