@@ -2,7 +2,7 @@ function refreshWeather(response) {
     let temperatureElement = document.querySelector("#temperature");
     let temperatureRounded = Math.round(response.data.temperature.current);
     let descriptionElement = document.querySelector("#description");
-    let humidityElement = document.querySelector("#humitidy");
+    let humidityElement = document.querySelector("#humidity");
 
    
    temperatureElement.innerHTML = `${temperatureRounded}°C`; 
