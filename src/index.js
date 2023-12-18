@@ -55,7 +55,7 @@ function displayWindSpeed(response) {
     let windSpeedElement = document.querySelector("#wind-speed");
     windSpeedElement.innerHTML = `${windSpeed} km/h`;
     return response;
-}*/
+}
 
 function displayWeatherIcon(response) {
     let icon = response.data.condition.icon_url;
@@ -74,7 +74,7 @@ function displayCurrentDateTime() {
 let cityForm = document.querySelector("#city-form");
 cityForm.addEventListener("submit", handleFormSubmit);
 
-displayCurrentDateTime();
+displayCurrentDateTime();*/
 
 
 
