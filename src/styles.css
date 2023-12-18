@@ -73,7 +73,7 @@ main {
     color: #f65282;
 }
 
-.current-temperature-icon {
+.weather-app-icon {
     position: relative;
     top: -8px;
     font-size: 40px;
@@ -83,9 +83,10 @@ main {
 .weather-app-temperature {
     font-size: 80px;
     font-weight: bold;
+    margin-left: 10px;
 }
 
-.current-temperature-unit {
+.weather-app-unit {
     font-size: 28px;
     position: relative;
     top: -38px;
