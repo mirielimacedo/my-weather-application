@@ -1,10 +1,19 @@
-function search(event) {
+/*function search(event) {
   event.preventDefault();
   let searchInputElement = document.querySelector("#search-input");
   let cityElement = document.querySelector("#current-city");
   cityElement.innerHTML = searchInputElement.value;
   
+}*/
+function search(event) {
+  event.preventDefault();
+  let searchInputElement = document.querySelector("#search-input");
+  let cityElement = document.querySelector("#current-city");
+  // Adicionando tratamento para letras maiúsculas e remoção de espaços
+  let formattedCity = searchInputElement.value.toUpperCase().replace(/\s/g, "");
+  cityElement.innerHTML = formattedCity;
 }
+
 
 function formatDate(date) {
   let minutes = date.getMinutes();
