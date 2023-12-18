@@ -11,7 +11,7 @@ function search(event) {
   let cityElement = document.querySelector("#current-city");
   // Adicionando tratamento para letras maiúsculas e remoção de espaços
   let formattedCity = searchInputElement.value.toUpperCase().replace(/\s/g, "");
-  cityElement = cityElement.charAt(0).toUpperCase() + cityElement.slice(1).toLowerCase();
+ // cityElement = cityElement.charAt(0).toUpperCase() + cityElement.slice(1).toLowerCase();
   cityElement.innerHTML = formattedCity;
 }
 
