@@ -1,4 +1,4 @@
-function refreshWaether(reponse){
+function refreshWaether(response){
   console.log(response.data);
 }
 
