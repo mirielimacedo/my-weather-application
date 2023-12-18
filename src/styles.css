@@ -1,49 +1,34 @@
 body {
-    font-family: Roboto, sans-serif;
-    background: #fafafa;
+    background: #f9f7fe;
+    font-family: "Roboto", sans-serif;
 }
 
-header {
-    border-bottom: 1px solid#f9f7fe;
-    display: block;
-    padding-bottom: 30px;
+a {
+    color: #885df1;
 }
 
-form {
-    display: block;
-    margin-top: 0em;
-}
-
-h1 {
-    font-size: 38px;
-    font-weight: 900px;
-    color: black;
-}
-
-main {
-    padding: 30px 0;
-}
-
-
-.weather-application {
-    background:white;
+.weather-app {
+    background: white;
     max-width: 600px;
     margin: 60px auto;
     padding: 30px;
     border-radius: 10px;
-    box-shadow: 0 30px 50px rgba(65, 50, 100, 00.08);
+    box-shadow: 0 30px 50px rgba(65, 50, 100, 0.08);
 }
 
+header {
+    border-bottom: 1px solid #f9f7fe;
+    padding-bottom: 30px;
+}
 
 .search-input {
     background-color: #f9f7fe;
     border: none;
     color: rgba(39, 33, 66, 0.4);
-    font-style: 16px;
+    font-size: 16px;
     padding: 20px;
     width: 75%;
     border-radius: 6px;
-    box-shadow: 0 30px 50px rgba(65, 50, 100, 00.08);
 }
 
 .search-button {
@@ -57,15 +42,23 @@ main {
     border-radius: 5px;
 }
 
-.current-city {
-    font-size: 38px;
-    font-weight: 900;
-    margin: 0;
+main {
+    padding: 30px 0;
+}
+
+.current-temperature {
+    font-size: 48px;
 }
 
 .current-weather {
     display: flex;
     justify-content: space-between;
+}
+
+.current-city {
+    font-size: 38px;
+    font-weight: 900;
+    margin: 0;
 }
 
 .current-details {
@@ -75,24 +68,16 @@ main {
     line-height: 24px;
 }
 
-.current-detail,
-strong {
+.current-details strong {
     color: #f65282;
 }
 
-.current-temperature {
-    font-size: 48px;
-}
-
-.current-temperature-icon img {
+.current-temperature-icon {
     position: relative;
-    top: 20px;
+    top: -8px;
     font-size: 40px;
-    margin-right: -20px;
-    width: 100px;
-    height: 100px;
+    margin-right: 10px;
 }
-
 
 .current-temperature-value {
     font-size: 80px;
@@ -105,17 +90,10 @@ strong {
     top: -38px;
 }
 
-p {
-    display: block;
-    margin-block-start: 1em;
-    margin-inline-end: 1em;
-    margin-inline-start: 0px;
-    margin-inline-end: 0px;
-}
-
 footer {
     border-top: 1px solid #f9f7fe;
     text-align: center;
     padding-top: 15px;
+
     color: rgba(39, 33, 66, 0.4);
 }
