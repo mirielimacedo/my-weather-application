@@ -1,9 +1,13 @@
+function refreshWaether(reponse){
+  console.log(response.data);
+}
+
 function getWeatherForCity(city) {
     let apiKey = "f9b4d69b4d22303f3t650a59od86ede0";
     let apiUrl = `https://api.shecodes.io/weather/v1/current?query=${city}&key=${apiKey}&units=metric`;
-    console.log(apiUrl);
+   axios.get(apiUrl).then(refreshWaether);
 
-    /*axios.get(apiUrl)
+    /*
         .then(displayWeather)
         .then(displayDescription)
         //.then(displayHumidity)
