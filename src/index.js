@@ -52,10 +52,41 @@ function handSearchSubmit(event) {
     searchCity(formattedCityName);  
 }
 
+function displayForecast(){
+
+let days=["Mon","Tue","Wed","Thur","Fri"];
+let forecastHtml="";
+
+days.forEach(function(day){
+    forecastHtml= forecastHtml + 
+            ` 
+           <div class="weather-forecast-day">
+  <div class="weather-forecast-date">${day}</div>
+  <div>
+    <img src="src/sun-icon.png" alt="" width="35" />
+  </div>
+  <div class="weather-forest-temperatures">
+    <div class="weather-forest-temperature">
+      <span class="weather-forecast-temperature-max"><strong>32°</strong></span>
+      <span class="weather-forecast-temperature-min">22°</span>
+    </div>
+  </div>
+</div>
+`;
+});
+let forecastElement = document.querySelector("#forecast");
+forecastElement.innerHTML = forecastHtml;
+
+}
+
 let searchFormElement = document.querySelector("#search-form");
 searchFormElement.addEventListener("submit", handSearchSubmit);
 
 searchCity("São Paulo");
+displayForecast();
+
+
+
 
 
 

@@ -92,8 +92,12 @@ main {
 }
 .weather-forecast{
     margin-top: 20px;
-    text-align: left;
+    text-align: center;
     color: #000;
+    display: flex;
+        justify-content: space-around;
+        align-items: center;
+        flex-wrap: wrap;
 
 }
 .weather-forecast-date{
@@ -106,6 +110,16 @@ main {
 }
 .weather-forecast-temperature-min{
     opacity: 0.5;
+}
+.weather-forecast {
+   
+}
+
+.weather-forecast-day {
+    flex: 1;
+    margin: 5px;
+    text-align: center;
+    min-width: 100px;
 }
 footer {
     border-top: 1px solid #f9f7fe;
