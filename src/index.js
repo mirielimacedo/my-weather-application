@@ -7,9 +7,9 @@ function refreshWeather(response) {
     let timeElement = document.querySelector("#time");
     let date = new Date(response.data.time * 1000);
     let iconElement = document.querySelector("#icon");
-    let searchElement = document.querySelector("#search-form-input");
+    let cityElement = document.querySelector("#city");
     
-    searchElement.value = `${response.data.city}`;
+    cityElement.innerHTML = `${response.data.city}`;
     iconElement.innerHTML = `<img src=" ${response.data.condition.icon_url}" class="weather-app-icon" />`;
     temperatureElement.innerHTML = `${temperatureRounded}`; 
    descriptionElement.innerHTML = response.data.condition.description;
@@ -55,7 +55,7 @@ function handSearchSubmit(event) {
 let searchFormElement = document.querySelector("#search-form");
 searchFormElement.addEventListener("submit", handSearchSubmit);
 
-searchCity("Paris");
+searchCity("São Paulo");
 
 
 
