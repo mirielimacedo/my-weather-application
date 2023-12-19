@@ -52,7 +52,8 @@ function handSearchSubmit(event) {
 
 let searchFormElement = document.querySelector("#search-form");
 searchFormElement.addEventListener("submit", handSearchSubmit);
-searchCity("Perth");
+
+searchCity("Paris");
 
 
 
