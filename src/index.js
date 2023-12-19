@@ -4,12 +4,14 @@ function refreshWeather(response) {
     let descriptionElement = document.querySelector("#description");
     let humidityElement = document.querySelector("#humidity");
     let windSpeedElement = document.querySelector("#wind-speed");
+    let timeElement = document.querySelector("#time");
 
    
    temperatureElement.innerHTML = `${temperatureRounded}°C`; 
    descriptionElement.innerHTML = response.data.condition.description;
    humidityElement.innerHTML = `${response.data.temperature.humidity}%`;
    windSpeedElement.innerHTML = `${response.data.wind.speed}km/h`;
+   timeElement.innerHTML = "Tuesday 10:20";
 
 }
 
