@@ -4,19 +4,54 @@ body {
 }
 
 a {
-    color: #885df1;
+    color: darkslateblue;
+}
+h1{
+    color: white;
 }
 
 .weather-app {
-    background-image:url("weather background.jpg") ;
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: center;
     max-width: 600px;
     margin: 60px auto;
     padding: 30px;
     border-radius: 10px;
     box-shadow: 0 30px 50px rgba(65, 50, 100, 0.08);
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+}
+
+.weather-app::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-image: url('weather-background.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    filter: blur(8px);
+    z-index: -1;
+}
+
+.weather-app::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background: linear-gradient(to right, rgba(0, 0, 0, 0.3), rgba(255, 255, 255, 0.3));
+    z-index: 0;
+}
+
+
+.weather-app * {
+    position: relative;
+    z-index: 2;
+   
 }
 
 header {
@@ -25,7 +60,7 @@ header {
 }
 
 .search-form-input {
-    background-color: #f9f7fe;
+    background-color:#DFDFDF;
     border: none;
     color: rgba(39, 33, 66, 0.4);
     font-style: 16px;
@@ -37,7 +72,7 @@ header {
 .search-form-button {
     margin-left: 5px;
     font-size: 16px;
-    background-color: #885df1;
+    background-color: #8490B9;
     color: white;
     border: none;
     padding: 20px;
@@ -64,7 +99,7 @@ main {
     margin: 0;line-height: 48px;
 }
 .weather-app-details {
-    color: darkslateblue;
+    color: #4E4881;
     font-size: 16px;
     font-weight: 500;
     line-height: 24px;
@@ -84,17 +119,19 @@ main {
     font-size: 88px;
     font-weight: bold;
     line-height: 88px;
+    color: white;
 }
 
 .weather-app-unit {
    margin-top: 6px;
    font-size: 28px;
+   color:white;
 }
 .weather-forecast{
     display: inline-flex;
     margin-top: 20px;
     text-align: center;
-    color: #000;
+    color: darkslateblue;
     display: flex;
     justify-content: space-evenly;
     align-items: center;
@@ -109,6 +146,7 @@ main {
 .weather-forecast-date{
     font-size: 16px;
     opacity:0.8 ;
+    color: darkblue;
 
 }
 .weather-forecast-temperature{
@@ -127,6 +165,6 @@ footer {
     border-top: 1px solid #f9f7fe;
     text-align: center;
     padding-top: 30px 0 0 0;
-    color: darkslateblue;
+    color: white;
     font-size: 14px;
 }

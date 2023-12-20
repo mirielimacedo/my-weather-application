@@ -93,9 +93,8 @@ forecastElement.innerHTML = forecastHtml;
 let searchFormElement = document.querySelector("#search-form");
 searchFormElement.addEventListener("submit", handSearchSubmit);
 
-searchCity("São Paulo");
-//getForecsat("São Paulo");
-//displayForecast();
+searchCity("Perth");
+
 
 
 
