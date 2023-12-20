@@ -17,6 +17,7 @@ function refreshWeather(response) {
    windSpeedElement.innerHTML = `${response.data.wind.speed}km/h`;
    timeElement.innerHTML = formatDate(date);
 
+    getForecsat(response.data.city);
 }
 
 function formatDate(date){
@@ -51,8 +52,14 @@ function handSearchSubmit(event) {
     cityElement.innerHTML = formattedCityName;  
     searchCity(formattedCityName);  
 }
+function getForecsat(city){
+    let apiKey = "f9b4d69b4d22303f3t650a59od86ede0";
+    let apiUrl = `https://api.shecodes.io/weather/v1/forecast?query=${city}&key=${apiKey}&units=metric`;
+    axios(apiUrl).then(displayForecast);
 
-function displayForecast(){
+}
+function displayForecast(response){
+    console.log(response.data);
 
 let days=["Mon","Tue","Wed","Thur","Fri"];
 let forecastHtml="";
@@ -83,7 +90,8 @@ let searchFormElement = document.querySelector("#search-form");
 searchFormElement.addEventListener("submit", handSearchSubmit);
 
 searchCity("São Paulo");
-displayForecast();
+//getForecsat("São Paulo");
+//displayForecast();
 
 
 
