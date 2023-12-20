@@ -59,31 +59,26 @@ function getForecsat(city){
 
 }
 function formatDay(timestamp){
-    let date = new Date(timestamp);
+    let date = new Date(timestamp * 1000);
     let days=["Sun","Mon","Tue","Wed","Thur","Fri","Sat"];
     return days[date.getDay()];
 }
 
 function displayForecast(response){
     console.log(response.data);
-
-
 let forecastHtml="";
 
 response.data.daily.forEach(function(day,index){
     if(index < 5){
-
-  
+ 
     forecastHtml= forecastHtml + 
             ` 
-           <div class="weather-forecast-day">${formatDay(day.time)}
-         <div>
-         <img src="${day.condition.icon_url}"class="weather-forecast-icon" />
-         </div>
-         <div class="weather-forest-temperatures">
-         <div class="weather-forest-temperature">
-            <span class="weather-forecast-temperature-max"><strong>${Math.round(day.temperature.maximum)}°</strong></span>
-             <span class="weather-forecast-temperature-min">${Math.round(day.temperature.minimum)}°</span>
+          <div class="weather-forecast-day">
+         <div class="weather-forecast-date"> ${formatDay(day.time)}</div>
+         <img src="${day.condition.icon_url}" class="weather-forecast-icon" />
+         <div class="weather-forecast-temperatures">
+         <span class="weather-forecast-temperature-max"><strong>${Math.round(day.temperature.maximum)}°</strong></span>
+        <span class="weather-forecast-temperature-min">${Math.round(day.temperature.minimum)}°</span>
     </div>
   </div>
 </div>
